@@ -47,6 +47,7 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     border: none;
+    cursor: pointer;
 }
 
 .nav-right button img {
@@ -62,11 +63,10 @@ html, body {
 
 .search-section {
     width: 100%;
-    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 40px 40px 20px;
 }
 
 .search-section .search-left {
@@ -85,12 +85,17 @@ html, body {
 }
 
 .search-left input {
+    width: 90%;
     padding-left: 20px;
 }
 
 .search-left button,
 .search-left input {
     border: none;
+}
+
+.search-left input:focus {
+    outline: none;
 }
 
 .search-left button img {
@@ -136,8 +141,8 @@ html, body {
     position: absolute;
     top: 46px;
     display: none;
-    min-width: 130px;
     padding: 20px 20px;
+    background-color: white;
 }
 
 .search-right:hover .dropdown-content {
@@ -145,7 +150,49 @@ html, body {
     flex-direction: column;
 }
 
-.dropdown-content a {
+.dropdown-content button {
     padding: 4px 0;
+    text-align: left;
+    border: none;
     cursor: pointer;
+}
+
+/* Main section */
+#main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 40px 20px;
+}
+
+.country {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 30px;
+}
+
+.country .img {
+    width: 100%;
+}
+
+.img img {
+    width: 100%;
+    height: 180px;
+}
+
+.country .context {
+    padding: 20px;
+}
+
+.context h1 {
+    padding-bottom: 10px;
+}
+
+.context p {
+    padding-bottom: 10px;
 }

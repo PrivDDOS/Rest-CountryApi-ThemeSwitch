@@ -21,7 +21,7 @@
             <button>
                 <img src="assets/icon/search.png" alt="search">
             </button>
-            <input type="text" placeholder="Search for a country...">
+            <input #searchBox (input)="searchCountry(searchBox.value)" type="text" placeholder="Search for a country...">
         </div>
 
         <div class="search-right">
@@ -36,15 +36,32 @@
                 <div class="bridge"></div>
 
                 <div class="dropdown-content">
-                    <a>Africa</a>
-                    <a>America</a>
-                    <a>Asia</a>
-                    <a>Europe</a>
-                    <a>Oceania</a>
+                    <button (click)="getRegion('Africa')">Africa</button>
+                    <button (click)="getRegion('Americas')">America</button>
+                    <button (click)="getRegion('Asia')">Asia</button>
+                    <button (click)="getRegion('Europe')">Europe</button>
+                    <button (click)="getRegion('Oceania')">Oceania</button>
                 </div>
             
         </div>
 
     </div>
+
+    <main id="main">
+        <div 
+        *ngFor="let country of filteredData"
+        class="country"
+        >
+            <div class="img">
+                <img [src]="country.flags.svg" [alt]="country.name + 'flag' ">
+            </div>
+            <div class="context">
+                <h1>{{ country.name }}</h1>
+                <p><strong>Population: </strong>{{ country.population }}</p>
+                <p><strong>Region: </strong>{{ country.region }}</p>
+                <p><strong>Capital: </strong>{{ country.capital }}</p>
+            </div>
+        </div>
+    </main>
 
 </div>
