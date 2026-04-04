@@ -2,19 +2,27 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 html, body {
     width: 100%;
     height: auto;
+    background-color: hsl(0, 0%, 99%);
+    color: hsl(200, 15%, 8%);
     padding: 0;
     margin: 0;
 }
 
+#container.dark-mode {
+    height: 100%;
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 100%, 100%);
+}
+
 #container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -26,7 +34,13 @@ html, body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    background-color: hsl(0, 100%, 100%);
     padding: 0 40px;
+}
+
+#container.dark-mode .nav-section {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
 }
 
 .nav-section .nav-left h3 {
@@ -50,10 +64,25 @@ html, body {
     cursor: pointer;
 }
 
-.nav-right button img {
+#container.dark-mode .nav-right button{
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.nav-right button span {
     width: 16px;
     height: 14px;
+    background-image: url('/assets/icon/moon-light.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+#container.dark-mode .nav-right button span {
+    width: 16px;
+    height: 14px;
+    background-image: url('/assets/icon/moon-dark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .nav-right button p {
@@ -75,18 +104,45 @@ html, body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 20px;
     padding-left: 22px;
+}
+
+#container.dark-mode .search-left {
+    background-color: hsl(209, 23%, 22%);
+}
+
+.search-left button span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('/assets/icon/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#container.dark-mode .search-left button span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('/assets/icon/search-white.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: hsl(209, 23%, 22%);
 }
 
 .search-left button:hover {
     cursor: pointer;
 }
 
+
 .search-left input {
     width: 90%;
     padding-left: 20px;
+}
+
+#container.dark-mode .search-left input {
+    background-color: hsl(209, 23%, 22%);
+    color: white;
 }
 
 .search-left button,
@@ -116,9 +172,11 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    border: 1px solid black;
-    border-radius: 20px;
     cursor: pointer;
+}
+
+#container.dark-mode .search-right .dropdown-container {
+    background-color: hsl(209, 23%, 22%);
 }
 
 .dropdown-container button {
@@ -126,9 +184,23 @@ html, body {
     cursor: pointer;
 }
 
-.dropdown-container button img {
+.dropdown-container button span {
+    display: block;
     width: 16px;
     height: 16px;
+    background-image: url('/assets/icon/down-arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#container.dark-mode .dropdown-container button span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: hsl(209, 23%, 22%);
+    background-image: url('/assets/icon/down-arrow-white.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .search-right .bridge {
@@ -145,6 +217,10 @@ html, body {
     background-color: white;
 }
 
+#container.dark-mode .dropdown-content {
+    background-color: hsl(209, 23%, 22%);
+}
+
 .search-right:hover .dropdown-content {
     display: flex;
     flex-direction: column;
@@ -155,6 +231,11 @@ html, body {
     text-align: left;
     border: none;
     cursor: pointer;
+}
+
+#container.dark-mode .dropdown-content button {
+    background-color: hsl(209, 23%, 22%);
+    color: white;
 }
 
 /* Main section */
@@ -168,12 +249,17 @@ html, body {
 }
 
 .country {
-    width: 100%;
+    width: 90%;
     height: 400px;
     display: flex;
     flex-direction: column;
     gap: 2px;
     padding: 30px;
+    margin-bottom: 20px;
+}
+
+#container.dark-mode .country {
+    background-color: hsl(209, 23%, 22%);
 }
 
 .country .img {

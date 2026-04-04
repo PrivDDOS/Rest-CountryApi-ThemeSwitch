@@ -7,8 +7,8 @@
         </div>
 
         <div class="nav-right">
-            <button>
-                <img src="assets/icon/moon-light.png" alt="moon icon">
+            <button (click)="darkMode()">
+                <span></span>
                 <p>Dark Mode</p>
             </button>
         </div>
@@ -19,7 +19,7 @@
 
         <div class="search-left">
             <button>
-                <img src="assets/icon/search.png" alt="search">
+                <span></span>
             </button>
             <input #searchBox (input)="searchCountry(searchBox.value)" type="text" placeholder="Search for a country...">
         </div>
@@ -29,7 +29,7 @@
                 <div class="dropdown-container">
                     <h4>Filter by Region</h4>
                     <button>
-                        <img src="assets/icon/down-arrow.png" alt="down arrow">
+                        <span></span>
                     </button>
                 </div>
 

@@ -11,8 +11,8 @@ import { Component , OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  data: any[] = []
-  filteredData: any[] = []
+  data: any[] = [];
+  filteredData: any[] = [];
 
   constructor(private http: HttpClient) {}
   
@@ -24,16 +24,21 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  searchCountry(country: string) {
-    const query = country.trim().toLowerCase();
+  darkMode() {
+    let container = document.getElementById("container");
+    container?.classList.toggle("dark-mode");
+  }
 
-    if (!query) {
+  searchCountry(country: string) {
+    const searchInput = country.trim().toLowerCase();
+
+    if (!searchInput) {
       this.filteredData = [...this.data];
       return;
     }
 
     this.filteredData = this.data.filter(countryItem =>
-      countryItem.name.toLowerCase().includes(query)
+      countryItem.name.toLowerCase().includes(searchInput)
     );
   }
 
