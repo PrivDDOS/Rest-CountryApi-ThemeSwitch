@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+    background-color: hsl(0, 0%, 99%);
+    color: hsl(200, 15%, 8%);
+    padding: 0;
+    margin: 0;
+}
+
+#container.dark-mode {
+    height: 100%;
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 100%, 100%);
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-section {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: hsl(0, 100%, 100%);
+    padding: 0 40px;
+}
+
+#container.dark-mode .nav-section {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.nav-section .nav-left h3 {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-right button {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+#container.dark-mode .nav-right button{
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.nav-right button span {
+    width: 16px;
+    height: 14px;
+    background-image: url('/assets/icon/moon-light.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#container.dark-mode .nav-right button span {
+    width: 16px;
+    height: 14px;
+    background-image: url('/assets/icon/moon-dark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nav-right button p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.search-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px 20px;
+}
+
+
+
+/* Main section */
+#main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#main .country {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

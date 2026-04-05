@@ -7,7 +7,7 @@
         </div>
 
         <div class="nav-right">
-            <button (click)="darkMode()">
+            <button (click)="toggleDarkMode()">
                 <span></span>
                 <p>Dark Mode</p>
             </button>
@@ -51,6 +51,7 @@
         <div 
         *ngFor="let country of filteredData"
         class="country"
+        (click)="onClickCountry(country)"
         >
             <div class="img">
                 <img [src]="country.flags.svg" [alt]="country.name + 'flag' ">

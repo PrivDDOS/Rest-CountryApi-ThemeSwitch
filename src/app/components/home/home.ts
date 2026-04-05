@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component , OnInit} from '@angular/core';
+import { ServiceFunction } from '../../service/service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,11 @@ export class HomeComponent implements OnInit {
   data: any[] = [];
   filteredData: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private serviceFunction: ServiceFunction,
+    private router: Router,
+  ) {}
   
   ngOnInit(): void {
     this.http.get<any[]>('/assets/data.json')
@@ -24,9 +30,13 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  darkMode() {
-    let container = document.getElementById("container");
-    container?.classList.toggle("dark-mode");
+  toggleDarkMode() {
+    this.serviceFunction.darkMode();
+  }
+
+  onClickCountry(country: any) {
+    this.serviceFunction.setSelectedCountry(country);
+    this.router.navigate(['/info']);
   }
 
   searchCountry(country: string) {
