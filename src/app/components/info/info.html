@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" [class.dark-mode]="serviceFunction.darkMode()">
 
     <div class="nav-section">
 
@@ -27,11 +27,42 @@
             <div class="img">
                 <img [src]="selectedCountry?.flags?.svg" [alt]="selectedCountry?.name + ' flag'">
             </div>
-            <div class="info">
-                <h1>{{ selectedCountry?.name }}</h1>
-                <p><strong>Population: </strong>{{ selectedCountry?.population }}</p>
-                <p><strong>Region: </strong>{{ selectedCountry?.region }}</p>
-                <p><strong>Capital: </strong>{{ selectedCountry?.capital }}</p>
+            <div class="info-container">
+
+                <div class="info-top">
+                    <h1>{{ selectedCountry?.name }}</h1>
+                </div>
+
+                <div class="info">
+                    <div class="info-left">
+                        <p><strong>Native Name: </strong>{{ selectedCountry?.nativeName }}</p>
+                        <p><strong>Population: </strong>{{ selectedCountry?.population }}</p>
+                        <p><strong>Region: </strong>{{ selectedCountry?.region }}</p>
+                        <p><strong>Sub Region: </strong>{{ selectedCountry?.subregion }}</p>
+                        <p><strong>Capital: </strong>{{ selectedCountry?.capital }}</p>
+                    </div>
+
+                    <div class="info-right">
+                        <p><strong>Top Level Domain: </strong>{{ selectedCountry?.topLevelDomain?.[0] }}</p>
+                        <p><strong>Currency: </strong>{{ selectedCountry?.currencies?.[0]?.code }}</p>
+                        <p>
+                            <strong>Language: </strong>
+                            @for (language of selectedCountry?.languages; track language.name) {
+                                {{ language.name }}
+                            }
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info-bottom">
+                    <p>
+                        <strong>Border Countries: </strong>
+                        @for (border of selectedCountry?.borders; track border) {
+                            {{ border }}
+                        }
+                    </p>
+                </div>
+
             </div>
         </div>
 

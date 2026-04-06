@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ServiceFunction } from '../../service/service';
 
 @Component({
   selector: 'app-info',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './info.html',
-  styleUrl: './info.css',
+  styleUrls: ['./info.css'],
 })
 export class InfoComponent {
 
   selectedCountry: any;
 
   constructor(
-    private serviceFunction: ServiceFunction,
+    public serviceFunction: ServiceFunction,
   ) {
     this.selectedCountry = this.serviceFunction.getSelectedCountry()
   }
 
   toggleDarkMode() {
-    this.serviceFunction.darkMode();
+    this.serviceFunction.toggleDarkModeService();
   }
 
 }

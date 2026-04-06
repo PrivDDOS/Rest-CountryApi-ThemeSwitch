@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ServiceFunction {
 
   selectedCountry: any = null;
+  isDarkMode: boolean = false;
 
   setSelectedCountry(country: string) {
     this.selectedCountry = country;
@@ -15,9 +16,12 @@ export class ServiceFunction {
     return this.selectedCountry;
   }
 
+  toggleDarkModeService() {
+    this.isDarkMode = !this.isDarkMode
+  }
+
   darkMode() {
-    let container = document.getElementById("container");
-    container?.classList.toggle("dark-mode");
+    return this.isDarkMode
   }
 
 }

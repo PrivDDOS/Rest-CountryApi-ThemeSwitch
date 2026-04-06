@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component , OnInit} from '@angular/core';
 import { ServiceFunction } from '../../service/service';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private serviceFunction: ServiceFunction,
+    public serviceFunction: ServiceFunction,
     private router: Router,
   ) {}
   
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   toggleDarkMode() {
-    this.serviceFunction.darkMode();
+    this.serviceFunction.toggleDarkModeService();
   }
 
   onClickCountry(country: any) {
