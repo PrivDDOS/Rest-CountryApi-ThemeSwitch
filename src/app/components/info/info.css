@@ -103,7 +103,7 @@ html, body {
 /* Main section */
 #main {
     width: 100%;
-    height: auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,6 +113,69 @@ html, body {
 #main .country {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+}
+
+.country .img{
+    width: 50%;
+    padding: 40px 80px;
+}
+
+.country .img img {
+    width: 600px;
+    height: 400px;
+}
+
+.country .info-container {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.info-container .info-top {
+    padding-bottom: 40px;
+}
+
+.info-container .info-mid {
+    display: flex;
+}
+
+.info-mid .info-left {
+    padding-right: 40px;
+}
+
+.info-mid .info-left div {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.info-mid .info-left div p {
+    padding-left: 10px;
+}
+
+.info-mid .info-right {
+    padding-left: 40px;
+}
+
+.info-mid .info-right div {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.info-mid .info-right div p {
+    padding-left: 10px;
+}
+
+.info-container .info-bottom {
+    padding-top: 80px;
+}
+
+.info-bottom div {
+    display: flex;
+}
+
+.info-bottom div p {
+    padding: 0 20px;
 }

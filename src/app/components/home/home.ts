@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component , OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component , OnInit} from '@angular/core';
 import { ServiceFunction } from '../../service/service';
 import { Router } from '@angular/router';
 
@@ -20,15 +20,17 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     public serviceFunction: ServiceFunction,
     private router: Router,
+    private cdr: ChangeDetectorRef
   ) {}
   
   ngOnInit(): void {
-    this.http.get<any[]>('/assets/data.json')
+    this.http.get<any[]>('assets/data.json')
       .subscribe(res => {
         this.data = res;
-        this.filteredData = res;
+        this.filteredData = [...res];
+        this.cdr.detectChanges()
       });
-  }
+  };
 
   toggleDarkMode() {
     this.serviceFunction.toggleDarkModeService();

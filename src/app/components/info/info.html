@@ -1,4 +1,4 @@
-<div id="container" [class.dark-mode]="serviceFunction.darkMode()">
+<div id="container" [class.dark-mode]="serviceFunction.getDarkMode()">
 
     <div class="nav-section">
 
@@ -15,9 +15,12 @@
 
     </div>
 
-    <div class="search-section">
+    <div class="btn-container">
 
-        
+        <button
+        routerLink="/"
+            type="button" 
+            class="btn"></button>
 
     </div>
 
@@ -27,40 +30,55 @@
             <div class="img">
                 <img [src]="selectedCountry?.flags?.svg" [alt]="selectedCountry?.name + ' flag'">
             </div>
+
             <div class="info-container">
 
                 <div class="info-top">
                     <h1>{{ selectedCountry?.name }}</h1>
                 </div>
 
-                <div class="info">
+                <div class="info-mid">
                     <div class="info-left">
-                        <p><strong>Native Name: </strong>{{ selectedCountry?.nativeName }}</p>
-                        <p><strong>Population: </strong>{{ selectedCountry?.population }}</p>
-                        <p><strong>Region: </strong>{{ selectedCountry?.region }}</p>
-                        <p><strong>Sub Region: </strong>{{ selectedCountry?.subregion }}</p>
-                        <p><strong>Capital: </strong>{{ selectedCountry?.capital }}</p>
+                        <div>
+                            <strong>Native Name: </strong><p>{{ selectedCountry?.nativeName }}</p>
+                        </div>
+                        <div>
+                            <strong>Population: </strong><p>{{ selectedCountry?.population }}</p>
+                        </div>
+                        <div>
+                            <strong>Region: </strong><p>{{ selectedCountry?.region }}</p>
+                        </div>
+                        <div>
+                            <strong>Sub Region: </strong><p>{{ selectedCountry?.subregion }}</p>
+                        </div>
+                        <div>
+                            <strong>Capital: </strong><p>{{ selectedCountry?.capital }}</p>
+                        </div>
                     </div>
 
                     <div class="info-right">
-                        <p><strong>Top Level Domain: </strong>{{ selectedCountry?.topLevelDomain?.[0] }}</p>
-                        <p><strong>Currency: </strong>{{ selectedCountry?.currencies?.[0]?.code }}</p>
-                        <p>
+                        <div>
+                            <strong>Top Level Domain: </strong><p>{{ selectedCountry?.topLevelDomain?.[0] }}</p>
+                        </div>
+                        <div>
+                            <strong>Currency: </strong><p>{{ selectedCountry?.currencies?.[0]?.code }}</p>
+                        </div>
+                        <div>
                             <strong>Language: </strong>
                             @for (language of selectedCountry?.languages; track language.name) {
-                                {{ language.name }}
+                                <p>{{ language.name }}</p>
                             }
-                        </p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="info-bottom">
-                    <p>
+                    <div>
                         <strong>Border Countries: </strong>
                         @for (border of selectedCountry?.borders; track border) {
-                            {{ border }}
+                            <p>{{ border }}</p>
                         }
-                    </p>
+                    </div>
                 </div>
 
             </div>

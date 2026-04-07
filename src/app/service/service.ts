@@ -20,7 +20,7 @@ export class ServiceFunction {
     this.isDarkMode = !this.isDarkMode
   }
 
-  darkMode() {
+  getDarkMode() {
     return this.isDarkMode
   }
 

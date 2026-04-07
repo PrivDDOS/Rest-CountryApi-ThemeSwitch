@@ -1,4 +1,4 @@
-<div id="container" [class.dark-mode]="serviceFunction.darkMode()">
+<div id="container" [class.dark-mode]="serviceFunction.getDarkMode()">
 
     <div class="nav-section">
 
@@ -49,12 +49,12 @@
 
     <main id="main">
         <div 
-        *ngFor="let country of filteredData"
+        *ngFor="let country of data"
         class="country"
         (click)="onClickCountry(country)"
         >
             <div class="img">
-                <img [src]="country.flags.svg" [alt]="country.name + 'flag' ">
+                <img [src]="country?.flags?.svg" [alt]="country?.name + 'flag' ">
             </div>
             <div class="context">
                 <h1>{{ country.name }}</h1>
