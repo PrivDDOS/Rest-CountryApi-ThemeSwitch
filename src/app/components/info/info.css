@@ -90,14 +90,45 @@ html, body {
     font-weight: 600;
 }
 
-.search-section {
+.btn-container {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 40px 40px 20px;
 }
 
+.btn-container button {
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+#container.dark-mode .btn-container button {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+.btn-container button span {
+    width: 16px;
+    height: 14px;
+    background-image: url('/assets/icon/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#container.dark-mode .btn-container button span {
+    width: 16px;
+    height: 14px;
+    background-image: url('/assets/icon/back-white.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn-container button p {
+    padding-left: 10px;
+}
 
 
 /* Main section */
@@ -128,7 +159,6 @@ html, body {
 
 .country .info-container {
     width: 50%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 40px;
