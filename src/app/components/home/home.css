@@ -306,4 +306,16 @@ html, body {
         align-items: center;
         flex-direction: column;
     }
+
+    .country {
+        width: 58%;
+        height: auto;
+        padding: 0;
+        border-radius: 10px;
+    }
+
+    .country .img img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 }

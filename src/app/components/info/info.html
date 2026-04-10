@@ -78,9 +78,11 @@
                 <div class="info-bottom">
                     <div>
                         <strong>Border Countries: </strong>
-                        @for (border of selectedCountry?.borders; track border) {
-                            <p>{{ border }}</p>
-                        }
+                        <div class="text">
+                            @for (border of selectedCountry?.borders; track border) {
+                                <p>{{ border }}</p>
+                            }
+                        </div>
                     </div>
                 </div>
 
