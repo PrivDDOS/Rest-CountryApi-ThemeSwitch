@@ -204,19 +204,25 @@ html, body {
 }
 
 .info-bottom div {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.info-bottom div strong {
+    width: 20%;
 }
 
 .info-bottom .text {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: 80%;
 }
 
 .info-bottom .text p {
     padding: 20px 20px 0 0;
+    width: 20%;
 }
 
 @media only screen and (max-width: 756px) {
@@ -242,8 +248,14 @@ html, body {
         padding: 0;
     }
 
-    .info-bottom .text {
-        flex-direction: row;
+    .info-bottom div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-bottom .text p {
+        padding: 20px 0 20px 0;
     }
 
     #container.dark-mode #main .info-bottom .text p {
